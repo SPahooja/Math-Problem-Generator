@@ -18,4 +18,3 @@ def generate_questions(mult = 4, sq = 4, cube = 4, rev_mult = 4):
             f.write("%s" % str(questions.index(i) + 1) + ") ")
             f.write("%s\n" % i)
     f.close()
-

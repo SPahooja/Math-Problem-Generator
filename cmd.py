@@ -89,15 +89,19 @@ def isPrime(x):
     return count == 1
 
 def prime_mult(times):
-    primes = [i for i in range(5,24) if isPrime(i)]
-    for _ in range(times):
+    used = []
+    primes = [i for i in range(4,19) if isPrime(i)]
+    for _ in range(6):
         x = np.random.choice(primes)
-        while(x <= 10):
-            x = np.random.choice(primes)
         y = np.random.choice(primes)
-        while(y == x or y >=10):
+        t = str(x) + "x" + str(y)
+        while(y == x or y >=10 or x<= 10 or t in used):
+            x = np.random.choice(primes)
             y = np.random.choice(primes)
+            t = str(x) + "x" + str(y)
         ans = x * y
+        print(x," , ", y)
+        used.append(t)
         q = str(ans) + " = " #+ str(x) + " x " + str(y)
         questions.append(q)      
 

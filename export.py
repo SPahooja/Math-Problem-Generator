@@ -8,12 +8,12 @@ import datetime
 
 
 
-generate_questions(mult = 10, sq = 6, cube = 6, rev_mult = 10)
+generate_questions(mult = 10, sq = 6, cube = 6, rev_mult = 8)
 
 
 
-fromaddr = "sahilmathpractice@gmail.com"
-toaddr = "riyapahooja@gmail.com"
+fromaddr = "receiver@email.com"
+toaddr = "sender@email.com"
 
 msg = MIMEMultipart() 
 msg['From'] = fromaddr 
@@ -56,7 +56,7 @@ s = smtplib.SMTP('smtp.gmail.com', 587)
 s.starttls() 
   
 # Authentication 
-s.login(fromaddr, "MATH1234") 
+s.login(fromaddr, "SENDER_PASSWORD") 
   
 # Converts the Multipart msg into a string 
 text = msg.as_string() 
